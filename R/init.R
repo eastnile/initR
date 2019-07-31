@@ -3,7 +3,6 @@ gdrivepath = function() {
   path = as.character(gdrivepaths[gdrivepaths$sysname == Sys.info()["nodename"],2])
   return(path)
 }
-<<<<<<< HEAD
 
 # install if not present
 installif = function(libs) {
@@ -22,5 +21,4 @@ libif = function(libs) {
   lib(libs)
 }
 
-=======
->>>>>>> fd9c0d071705f6939b481ef252659dc3276ca669
+
