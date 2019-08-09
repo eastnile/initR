@@ -53,3 +53,8 @@ setproj=function(proj) {
     }
   }
 }
+<<<<<<< HEAD
+=======
+
+setproj(10)
+>>>>>>> bd6a7891906b09d46be99a4e39d6ac9109c2ddbf
