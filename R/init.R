@@ -30,5 +30,28 @@ libif = function(libs) {
 
 #tester = data.frame(systname = 'Zhaochens-MacBook-Air.local', gdrivepath='/Users/sterilite/Google Drive/')
 
+setproj=function(proj) {
+  projlist = read.csv(file=paste(gdrivepath(),'research/projlist.txt',sep=''),header=TRUE,stringsAsFactors = F)
+  if (class(proj) == 'numeric') {
+    if (proj %in% projlist$projnum) {
+      projdir = projlist$projpath[projlist$projnum == proj]
+      path = paste(gdrivepath(),'research/',projdir,'/proj.R',sep='')
+      source(path)
+    }
+    else {
+      print('Project number not found')
+    }
+  }
+  else if (class(proj) == 'character') {
+    if (proj %in% projlist$projeasyname) {
+      projdir = projlist$projpath[projlist$projeasyname == proj]
+      path = paste(gdrivepath(),'research/',projdir,'/proj.R',sep='')
+      source(path)
+    }
+    else {
+      print('Project name not found')
+    }
+  }
+}
 
-
+setproj(10)
